@@ -46,9 +46,22 @@ def build_heap(data):
 
 
 def main():
-
-    n = int(input())
-    data = list(map(int, input().split()))
+    text=input("F or I: ")
+    if "I" in text:
+        n=int(input())
+        data = list(map(int, input().split()))
+    elif "F" in text:
+        name=input()
+        path='./test/'
+        file = path+name
+        if "a" not in name:
+            try:
+                with open(file) as f:
+                    n=int(f.readline())
+                    data = list(map(int, f.readline().split()))
+            except Exception as e:
+                print("Kļūda", str(e))
+                return
 
     assert len(data) == n
 
