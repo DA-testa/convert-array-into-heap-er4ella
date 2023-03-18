@@ -52,7 +52,7 @@ def main():
         data = list(map(int, input().split()))
     elif "F" in text:
         name=input()
-        path='./test/'
+        path='./tests/'
         file = path+name
         if "a" not in name:
             try:
